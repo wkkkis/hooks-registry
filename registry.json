@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "baseUrl": "https://raw.githubusercontent.com/wkkkis/hooks-registry/main",
   "hooks": [
-    { "id": "use-debounce", "path": "hooks/use-debounce" },
-    { "id": "use-event-listener", "path": "hooks/use-event-listener" },
-    { "id": "use-disclosure", "path": "hooks/use-disclosure" }
+    { "id": "use-click-outside", "path": "hooks/use-click-outside" },
+    { "id": "use-window-size", "path": "hooks/use-window-size" },
+    { "id": "use-fullscreen", "path": "hooks/use-fullscreen" },
+    { "id": "use-keypress", "path": "hooks/use-keypress" }
   ]
 }
