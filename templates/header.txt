@@ -1,0 +1,1 @@
+/* Installed via wkkkis-hooks (registry v${REGISTRY_VERSION}) */

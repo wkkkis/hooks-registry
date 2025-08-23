@@ -1,0 +1,10 @@
+{
+  "name": "use-fullscreen",
+  "id": "use-fullscreen",
+  "files": [
+    { "from": "files/use-fullscreen.ts", "to": "src/hooks/use-fullscreen.ts" }
+  ],
+  "peerDependencies": { "react": ">=17.0.0" },
+  "tags": ["performance", "state"],
+  "since": "0.1.0"
+}

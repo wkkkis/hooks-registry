@@ -1,0 +1,10 @@
+{
+  "name": "use-window-size",
+  "id": "use-window-size",
+  "files": [
+    { "from": "files/use-window-size.ts", "to": "src/hooks/use-window-size.ts" }
+  ],
+  "peerDependencies": { "react": ">=17.0.0" },
+  "tags": ["performance", "state"],
+  "since": "0.1.0"
+}

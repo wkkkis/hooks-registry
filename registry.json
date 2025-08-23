@@ -1,0 +1,10 @@
+{
+  "name": "@wkkkis/hooks-registry",
+  "version": "0.1.0",
+  "baseUrl": "https://raw.githubusercontent.com/wkkkis/hooks-registry/main",
+  "hooks": [
+    { "id": "use-debounce", "path": "hooks/use-debounce" },
+    { "id": "use-event-listener", "path": "hooks/use-event-listener" },
+    { "id": "use-disclosure", "path": "hooks/use-disclosure" }
+  ]
+}
