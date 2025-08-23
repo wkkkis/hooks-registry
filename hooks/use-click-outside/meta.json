@@ -1,6 +1,7 @@
 {
   "name": "use-click-outside",
   "id": "use-click-outside",
+  "description": "Detects clicks outside of a referenced element.",
   "files": [
     {
       "from": "files/use-click-outside.ts",

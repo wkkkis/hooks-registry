@@ -1,6 +1,7 @@
 {
   "name": "use-window-size",
   "id": "use-window-size",
+  "description": "Tracks the current window's dimensions.",
   "files": [
     { "from": "files/use-window-size.ts", "to": "src/hooks/use-window-size.ts" }
   ],

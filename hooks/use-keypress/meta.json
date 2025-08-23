@@ -1,6 +1,7 @@
 {
   "name": "use-keypress",
   "id": "use-keypress",
+  "description": "Tracks the user's keyboard combinations and key presses.",
   "files": [
     { "from": "files/use-keypress.ts", "to": "src/hooks/use-keypress.ts" }
   ],

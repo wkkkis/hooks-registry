@@ -1,6 +1,7 @@
 {
   "name": "use-fullscreen",
   "id": "use-fullscreen",
+  "description": "Enter and exit fullscreen mode for a given element or the entire page.",
   "files": [
     { "from": "files/use-fullscreen.ts", "to": "src/hooks/use-fullscreen.ts" }
   ],
