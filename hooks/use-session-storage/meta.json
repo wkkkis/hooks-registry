@@ -1,0 +1,14 @@
+{
+  "name": "use-session-storage",
+  "id": "use-session-storage",
+  "description": "Manages session storage with declarative methods.",
+  "files": [
+    {
+      "from": "files/use-session-storage.ts",
+      "to": "src/hooks/use-session-storage.ts"
+    }
+  ],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

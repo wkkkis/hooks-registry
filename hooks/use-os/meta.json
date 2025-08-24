@@ -1,0 +1,9 @@
+{
+  "name": "use-os",
+  "id": "use-os",
+  "description": "Detects the user's operating system.",
+  "version": "0.1.0",
+  "files": [{ "from": "files/use-os.ts", "to": "src/hooks/use-os.ts" }],
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

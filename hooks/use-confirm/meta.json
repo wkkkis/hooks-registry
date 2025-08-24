@@ -1,0 +1,11 @@
+{
+  "name": "use-confirm",
+  "id": "use-confirm",
+  "description": "Manages user confirmation states for actions.",
+  "files": [
+    { "from": "files/use-confirm.ts", "to": "src/hooks/use-confirm.ts" }
+  ],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

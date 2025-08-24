@@ -1,0 +1,11 @@
+{
+  "name": "use-orientation",
+  "id": "use-orientation",
+  "description": "Tracks the window's current media query.",
+  "files": [
+    { "from": "files/use-orientation.ts", "to": "src/hooks/use-orientation.ts" }
+  ],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

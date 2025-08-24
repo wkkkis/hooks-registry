@@ -1,0 +1,11 @@
+{
+  "name": "use-scroll-lock",
+  "id": "use-scroll-lock",
+  "description": "Lock and unlock scrolling on an element or the page.",
+  "files": [
+    { "from": "files/use-scroll-lock.ts", "to": "src/hooks/use-scroll-lock.ts" }
+  ],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "use-page-leave",
+  "id": "use-page-leave",
+  "description": "Detects when the user tries to leave the page.",
+  "version": "0.1.0",
+  "files": [
+    {
+      "from": "files/use-page-leave.ts",
+      "to": "src/hooks/use-page-leave.ts"
+    }
+  ],
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

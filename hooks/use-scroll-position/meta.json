@@ -1,0 +1,14 @@
+{
+  "name": "use-scroll-position",
+  "id": "use-scroll-position",
+  "description": "Tracks the current scroll position of the page.",
+  "files": [
+    {
+      "from": "files/use-scroll-position.ts",
+      "to": "src/hooks/use-scroll-position.ts"
+    }
+  ],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "use-mouse",
+  "id": "use-mouse",
+  "description": "Tracks the mouse position in the element and document.",
+  "files": [{ "from": "files/use-mouse.ts", "to": "src/hooks/use-mouse.ts" }],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

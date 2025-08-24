@@ -5,7 +5,7 @@
   "files": [
     { "from": "files/use-keypress.ts", "to": "src/hooks/use-keypress.ts" }
   ],
+  "version": "0.1.0",
   "peerDependencies": { "react": ">=17.0.0" },
-  "tags": ["performance", "state"],
   "since": "0.1.0"
 }

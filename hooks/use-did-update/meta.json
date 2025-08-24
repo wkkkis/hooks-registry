@@ -1,0 +1,11 @@
+{
+  "name": "use-did-update",
+  "id": "use-did-update",
+  "description": "Execute a function when the component is updated, but not when it is mounted.",
+  "version": "0.1.0",
+  "files": [
+    { "from": "files/use-did-update.ts", "to": "src/hooks/use-did-update.ts" }
+  ],
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

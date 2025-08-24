@@ -1,0 +1,14 @@
+{
+  "name": "use-local-storage",
+  "id": "use-local-storage",
+  "description": "Manages local storage with declarative methods.",
+  "files": [
+    {
+      "from": "files/use-local-storage.ts",
+      "to": "src/hooks/use-local-storage.ts"
+    }
+  ],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

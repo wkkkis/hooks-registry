@@ -1,0 +1,14 @@
+{
+  "name": "use-debounce-state",
+  "id": "use-debounce-state",
+  "description": "Debounce the call of a function.",
+  "files": [
+    {
+      "from": "files/use-debounce-state.ts",
+      "to": "src/hooks/use-debounce-state.ts"
+    }
+  ],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

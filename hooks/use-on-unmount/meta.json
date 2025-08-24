@@ -1,0 +1,11 @@
+{
+  "name": "use-on-unmount",
+  "id": "use-on-unmount",
+  "description": "Execute a function only once when the component is unmounted.",
+  "version": "0.1.0",
+  "files": [
+    { "from": "files/use-on-unmount.ts", "to": "src/hooks/use-on-unmount.ts" }
+  ],
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "use-event-listener",
+  "id": "use-event-listener",
+  "description": "A React hook for managing DOM event listeners with proper cleanup.",
+  "files": [
+    {
+      "from": "files/use-event-listener.ts",
+      "to": "src/hooks/use-event-listener.ts"
+    }
+  ],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

@@ -1,10 +1,10 @@
 {
-  "name": "use-fullscreen",
-  "id": "use-fullscreen",
+  "name": "use-geolocation",
+  "id": "use-geolocation",
   "description": "Enter and exit fullscreen mode for a given element or the entire page.",
   "version": "0.1.0",
   "files": [
-    { "from": "files/use-fullscreen.ts", "to": "src/hooks/use-fullscreen.ts" }
+    { "from": "files/use-geolocation.ts", "to": "src/hooks/use-geolocation.ts" }
   ],
   "peerDependencies": { "react": ">=17.0.0" },
   "since": "0.1.0"

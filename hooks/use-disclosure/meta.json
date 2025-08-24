@@ -1,0 +1,11 @@
+{
+  "name": "use-disclosure",
+  "id": "use-disclosure",
+  "description": "Manages boolean state for UI components like dialogs, modals, and popovers.",
+  "files": [
+    { "from": "files/use-disclosure.ts", "to": "src/hooks/use-disclosure.ts" }
+  ],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

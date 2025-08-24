@@ -1,0 +1,11 @@
+{
+  "name": "use-on-mount",
+  "id": "use-on-mount",
+  "description": "Execute a function when the component is updated, but not when it is mounted.",
+  "version": "0.1.0",
+  "files": [
+    { "from": "files/use-on-mount.ts", "to": "src/hooks/use-on-mount.ts" }
+  ],
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "use-notifications",
+  "id": "use-notifications",
+  "description": "A React hook for managing browser notifications with comprehensive feature detection and fallback support",
+  "files": [
+    {
+      "from": "files/use-notifications.ts",
+      "to": "src/hooks/use-notifications.ts"
+    }
+  ],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

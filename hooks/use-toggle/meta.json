@@ -1,0 +1,9 @@
+{
+  "name": "use-toggle",
+  "id": "use-toggle",
+  "description": "Controls a boolean state with a toggle function.",
+  "files": [{ "from": "files/use-toggle.ts", "to": "src/hooks/use-toggle.ts" }],
+  "version": "0.1.0",
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

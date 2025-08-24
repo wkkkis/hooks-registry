@@ -1,0 +1,14 @@
+{
+  "name": "use-is-touch-device",
+  "id": "use-is-touch-device",
+  "description": "Hook to detect if the user's device has touch screen functionality",
+  "version": "0.1.0",
+  "files": [
+    {
+      "from": "files/use-is-touch-device.ts",
+      "to": "src/hooks/use-is-touch-device.ts"
+    }
+  ],
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}

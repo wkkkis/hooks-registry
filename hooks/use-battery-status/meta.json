@@ -1,0 +1,14 @@
+{
+  "name": "use-battery-status",
+  "id": "use-battery-status",
+  "description": "A React hook to access system battery information via the Battery Status API",
+  "version": "0.1.0",
+  "files": [
+    {
+      "from": "files/use-battery-status.ts",
+      "to": "src/hooks/use-battery-status.ts"
+    }
+  ],
+  "peerDependencies": { "react": ">=17.0.0" },
+  "since": "0.1.0"
+}
