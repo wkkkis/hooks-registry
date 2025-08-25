@@ -3,9 +3,48 @@
   "id": "use-pagination",
   "description": "Hook for controlling list pagination.",
   "files": [
-    { "from": "files/use-pagination.ts", "to": "src/hooks/use-pagination.ts" }
+    {
+      "from": "files/use-pagination.ts",
+      "to": "src/hooks/use-pagination.ts"
+    }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "totalItems",
+        "type": "number",
+        "default": "-",
+        "description": "Total number of items to paginate"
+      },
+      {
+        "name": "initialPage",
+        "type": "number",
+        "default": "1",
+        "description": "Initial page"
+      },
+      {
+        "name": "initialPageSize",
+        "type": "number",
+        "default": "10",
+        "description": "Number of items per page"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": null,
+      "bullets": [
+        "Manages page and pageSize state.",
+        "Automatically calculates the total number of pages.",
+        "Ensures the current page stays within valid bounds.",
+        "Supports dynamic changes to pageSize ."
+      ]
+    }
+  ]
 }

@@ -3,9 +3,46 @@
   "id": "use-scroll-lock",
   "description": "Lock and unlock scrolling on an element or the page.",
   "files": [
-    { "from": "files/use-scroll-lock.ts", "to": "src/hooks/use-scroll-lock.ts" }
+    {
+      "from": "files/use-scroll-lock.ts",
+      "to": "src/hooks/use-scroll-lock.ts"
+    }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "ref",
+        "type": "RefObject<HTMLElement> <MutableRefObject<HTMLElement | null>",
+        "default": "undefined",
+        "description": "The ref of the element to lock scroll on. If not provided, locks the document body."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Target Behavior",
+      "bullets": [
+        "The hook accepts a ref to an element or defaults to the document body."
+      ]
+    },
+    {
+      "title": "Cleanup",
+      "bullets": [
+        "Restores the original overflow style on unmount."
+      ]
+    },
+    {
+      "title": "Performance & Safety",
+      "bullets": [
+        "Methods are memoized with useCallback .",
+        "Uses useRef to store the original overflow value."
+      ]
+    }
+  ]
 }

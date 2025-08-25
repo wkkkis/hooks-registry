@@ -3,9 +3,57 @@
   "id": "use-disclosure",
   "description": "Manages boolean state for UI components like dialogs, modals, and popovers.",
   "files": [
-    { "from": "files/use-disclosure.ts", "to": "src/hooks/use-disclosure.ts" }
+    {
+      "from": "files/use-disclosure.ts",
+      "to": "src/hooks/use-disclosure.ts"
+    }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "initialState",
+        "type": "boolean",
+        "default": "false",
+        "description": "The initial state of the disclosure"
+      },
+      {
+        "name": "callbacks",
+        "type": "DisclosureCallbacks",
+        "default": "{}",
+        "description": "Callback functions for open and close events"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "State Management",
+      "bullets": [
+        "The hook manages a boolean state that represents whether a component is open or closed",
+        "The state can be controlled through the returned functions: open , close , and toggle"
+      ]
+    },
+    {
+      "title": "Callbacks",
+      "bullets": [
+        "onOpen : Called when the disclosure is opened",
+        "onClose : Called when the disclosure is closed",
+        "Callbacks are optional and can be used for side effects"
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "Use this hook for components that need to be shown/hidden",
+        "Perfect for dialogs, modals, popovers, and drawers",
+        "The hook is client-side only",
+        "For best performance, memoize the callbacks if they depend on other values"
+      ]
+    }
+  ]
 }

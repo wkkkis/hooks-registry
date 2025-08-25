@@ -9,6 +9,114 @@
     }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "duration",
+        "type": "number",
+        "default": "1500",
+        "description": "The duration of the copied state"
+      }
+    ]
+  },
+  "returns": {
+    "properties": [
+      {
+        "name": "const"
+      },
+      {
+        "name": "copy"
+      },
+      {
+        "name": "useCopyToClipboard"
+      },
+      {
+        "name": "const"
+      },
+      {
+        "name": "handleCopy"
+      },
+      {
+        "name": "async"
+      },
+      {
+        "name": "const"
+      },
+      {
+        "name": "success"
+      },
+      {
+        "name": "await"
+      },
+      {
+        "name": "copy"
+      },
+      {
+        "name": "if"
+      },
+      {
+        "name": "alert"
+      },
+      {
+        "name": "Contribute"
+      },
+      {
+        "name": "Report",
+        "description": "an issue"
+      },
+      {
+        "name": "Request",
+        "description": "a feature"
+      },
+      {
+        "name": "Edit",
+        "description": "this page"
+      },
+      {
+        "name": "Brought",
+        "description": "to you by h3rmel ."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Browser Support & Fallback",
+      "bullets": [
+        "Uses the modern navigator.clipboard.writeText API if available.",
+        "Falls back to a legacy method using a hidden textarea and document.execCommand('copy') for older browsers."
+      ]
+    },
+    {
+      "title": "Error Handling",
+      "bullets": [
+        "If copying fails, the hook logs an error and returns false from the copy function."
+      ]
+    },
+    {
+      "title": "Copied State & Duration",
+      "bullets": [
+        "The copied state is set to true when copying succeeds, and automatically resets to false after the specified duration (in ms)."
+      ]
+    },
+    {
+      "title": "Cleanup",
+      "bullets": [
+        "Any pending timeout is cleared when the component unmounts, preventing memory leaks or unexpected state changes."
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "The hook is client-side only; on the server, it does not interact with the clipboard.",
+        "Some browsers may block clipboard access unless triggered by a user gesture (e.g., a button click).",
+        "The fallback method may not work in all environments (e.g., some mobile browsers).",
+        "For best performance, avoid creating new copy functions on every render."
+      ]
+    }
+  ]
 }

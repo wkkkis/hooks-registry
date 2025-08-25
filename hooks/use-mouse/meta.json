@@ -2,8 +2,85 @@
   "name": "use-mouse",
   "id": "use-mouse",
   "description": "Tracks the mouse position in the element and document.",
-  "files": [{ "from": "files/use-mouse.ts", "to": "src/hooks/use-mouse.ts" }],
+  "files": [
+    {
+      "from": "files/use-mouse.ts",
+      "to": "src/hooks/use-mouse.ts"
+    }
+  ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "ref",
+        "type": "RefObject<HTMLElement>",
+        "default": "null",
+        "description": "The ref of the element to track the mouse position"
+      },
+      {
+        "name": "trackOutside?",
+        "type": "boolean",
+        "default": "false",
+        "description": "Update state even outside the element"
+      },
+      {
+        "name": "clampToZero?",
+        "type": "boolean",
+        "default": "false",
+        "description": "Clamps elX/elY to >= 0"
+      }
+    ]
+  },
+  "returns": {
+    "properties": [
+      {
+        "name": "The",
+        "description": "hook returns an object with mouse position in the document, relative to the element, and element dimensions."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Required Ref & Error Handling",
+      "bullets": [
+        "The ref prop is required and must point to an HTMLElement .",
+        "In development, an error is logged if ref is missing or invalid."
+      ]
+    },
+    {
+      "title": "State Updates & Event Handling",
+      "bullets": [
+        "The hook listens to the mousemove event on the document.",
+        "State is only updated if any value changes, for performance.",
+        "If trackOutside is false , state only updates when the mouse is inside the element; if true , updates everywhere.",
+        "If clampToZero is true , elX and elY are clamped to zero or greater."
+      ]
+    },
+    {
+      "title": "Returned Data",
+      "bullets": [
+        "The hook returns an object with mouse position in the document, relative to the element, and element dimensions."
+      ]
+    },
+    {
+      "title": "Cleanup",
+      "bullets": [
+        "The event listener is removed automatically when the component unmounts."
+      ]
+    },
+    {
+      "title": "Caveats & Best Practices",
+      "bullets": [
+        "The hook is intended for use in the browser; on the server, it will always return zeros.",
+        "Ensure the ref is stable and points to a visible element.",
+        "If the element is not in the DOM, all values will be zero.",
+        "For best performance, avoid unnecessary re-renders by memoizing the ref."
+      ]
+    }
+  ]
 }

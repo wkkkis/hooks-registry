@@ -1,0 +1,8 @@
+{
+  "id": "use-debounce-callback",
+  "manual": true,
+  "language": "tsx",
+  "encoding": "utf8",
+  "file": "use-debounce-callback.tsx",
+  "code": "\"use client\";\n\nimport { useCallback, useEffect, useRef } from \"react\";\n\nexport function useDebounceCallback<\n  Fn extends (...args: Parameters<Fn>) => void\n>(callback: Fn, delay: number = 500): (...args: Parameters<Fn>) => void {\n  const callbackRef = useRef<typeof callback>(callback);\n  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);\n\n  useEffect(() => {\n    callbackRef.current = callback;\n  }, [callback]);\n\n  const debouncedFn = useCallback(\n    (...args: Parameters<Fn>) => {\n      if (timeoutRef.current) {\n        clearTimeout(timeoutRef.current);\n      }\n      timeoutRef.current = setTimeout(() => {\n        callbackRef.current(...args);\n      }, delay);\n    },\n    [delay]\n  );\n\n  // Clear the timeout when the component unmounts\n  useEffect(() => {\n    return () => {\n      if (timeoutRef.current) {\n        clearTimeout(timeoutRef.current);\n      }\n    };\n  }, []);\n\n  return debouncedFn;\n}\n"
+}

@@ -9,6 +9,68 @@
     }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "defaultValue",
+        "type": "T",
+        "default": "undefined",
+        "description": "The default value of the state."
+      },
+      {
+        "name": "delay",
+        "type": "number",
+        "default": "500",
+        "description": "The delay in milliseconds before the state is updated."
+      },
+      {
+        "name": "options",
+        "type": "object",
+        "default": "{}",
+        "description": "The options for the hook."
+      },
+      {
+        "name": "leading",
+        "type": "boolean",
+        "default": "false",
+        "description": "Whether to update the state immediately on first call."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Debounced State Update",
+      "bullets": [
+        "State updates are debounced: only the last value set within the delay period will be applied.",
+        "The setter function accepts either a value or an updater function (like React's setState )."
+      ]
+    },
+    {
+      "title": "Leading Option",
+      "bullets": [
+        "If options.leading is true , the state is updated immediately on the first call, then debounced for subsequent calls until the delay passes.",
+        "If false (default), the state is only updated after the delay."
+      ]
+    },
+    {
+      "title": "Cleanup",
+      "bullets": [
+        "Any pending timeout is cleared when the component unmounts or when a new value is set, preventing memory leaks or unexpected updates."
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "The hook is client-side only.",
+        "For best performance, avoid creating new setter functions on every render.",
+        "If the component unmounts before the delay, the state will not update.",
+        "The hook returns a tuple: [value, setDebouncedValue] ."
+      ]
+    }
+  ]
 }

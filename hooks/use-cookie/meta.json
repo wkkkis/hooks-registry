@@ -3,7 +3,111 @@
   "id": "use-cookie",
   "description": "Manages cookies with declarative methods.",
   "version": "0.1.0",
-  "files": [{ "from": "files/use-cookie.ts", "to": "src/hooks/use-cookie.ts" }],
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "files": [
+    {
+      "from": "files/use-cookie.ts",
+      "to": "src/hooks/use-cookie.ts"
+    }
+  ],
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "key",
+        "type": "string",
+        "default": "-",
+        "description": "The key to store the value in cookie"
+      },
+      {
+        "name": "initialValue",
+        "type": "string",
+        "default": "-",
+        "description": "The initial value to store in cookie"
+      },
+      {
+        "name": "options?",
+        "type": "CookieOptions",
+        "default": "-",
+        "description": "The options for the hook"
+      },
+      {
+        "name": "path",
+        "type": "string",
+        "default": "/",
+        "description": "The path of the cookie"
+      },
+      {
+        "name": "expires",
+        "type": "Date",
+        "default": "null",
+        "description": "The expiration date of the cookie"
+      },
+      {
+        "name": "maxAge",
+        "type": "number",
+        "default": "null",
+        "description": "The maximum age of the cookie"
+      },
+      {
+        "name": "domain",
+        "type": "string",
+        "default": "null",
+        "description": "The domain of the cookie"
+      },
+      {
+        "name": "secure",
+        "type": "boolean",
+        "default": "false",
+        "description": "Whether the cookie is secure"
+      },
+      {
+        "name": "sameSite",
+        "type": "string",
+        "default": "null",
+        "description": "The same-site attribute of the cookie"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Type Safety & Serialization",
+      "bullets": [
+        "The hook supports any serializable value (strings, objects, etc.).",
+        "Non-string values are automatically serialized to JSON when setting the cookie and deserialized when reading."
+      ]
+    },
+    {
+      "title": "Cookie Removal",
+      "bullets": [
+        "The removeCookie function deletes the cookie by setting its expiration date to the past."
+      ]
+    },
+    {
+      "title": "Error Handling",
+      "bullets": [
+        "If reading or writing the cookie fails, the hook logs a warning and falls back to the initial value."
+      ]
+    },
+    {
+      "title": "SSR & Initial Value",
+      "bullets": [
+        "On the server, the hook always returns the initial value and does not interact with cookies.",
+        "The initial value is only used if the cookie does not exist."
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "The hook is client-side only; on the server, it does not interact with cookies.",
+        "Avoid storing sensitive data in cookies.",
+        "Changing the key will re-read and update the value from the cookie.",
+        "For best performance, avoid creating new initialValue or options on every render (use useMemo if needed).",
+        "Some cookie options (e.g., secure , sameSite ) may be required for cross-site or secure contexts."
+      ]
+    }
+  ]
 }

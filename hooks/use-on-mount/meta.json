@@ -4,8 +4,53 @@
   "description": "Execute a function when the component is updated, but not when it is mounted.",
   "version": "0.1.0",
   "files": [
-    { "from": "files/use-on-mount.ts", "to": "src/hooks/use-on-mount.ts" }
+    {
+      "from": "files/use-on-mount.ts",
+      "to": "src/hooks/use-on-mount.ts"
+    }
   ],
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "callback",
+        "type": "void function",
+        "default": "() => {}",
+        "description": "The function to execute when the component is mounted."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Execution Timing",
+      "bullets": [
+        "The callback is executed only once, immediately after the component is mounted (on the client).",
+        "The callback will not run again on re-renders or updates."
+      ]
+    },
+    {
+      "title": "Callback Stability",
+      "bullets": [
+        "The callback is not re-invoked if it changes between renders; only the initial callback is used.",
+        "For best results, use a stable callback (e.g., from useCallback ) if it depends on props or state."
+      ]
+    },
+    {
+      "title": "SSR & Client-Only",
+      "bullets": [
+        "The hook is client-side only; on the server, the callback is never called."
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "Use for initialization logic, analytics, subscriptions, or side effects that should only run once.",
+        "Avoid side effects that depend on up-to-date props or state unless the callback is stable."
+      ]
+    }
+  ]
 }

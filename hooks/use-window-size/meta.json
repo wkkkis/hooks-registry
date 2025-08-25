@@ -4,8 +4,72 @@
   "version": "0.1.0",
   "description": "Tracks the current window's dimensions.",
   "files": [
-    { "from": "files/use-window-size.ts", "to": "src/hooks/use-window-size.ts" }
+    {
+      "from": "files/use-window-size.ts",
+      "to": "src/hooks/use-window-size.ts"
+    }
   ],
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "initialWidth?",
+        "type": "number",
+        "default": "undefined",
+        "description": "The initial width of the window. (optional)"
+      },
+      {
+        "name": "initialHeight?",
+        "type": "number",
+        "default": "undefined",
+        "description": "The initial height of the window. (optional)"
+      },
+      {
+        "name": "onChange?",
+        "type": "(width: number, height: number) => void",
+        "default": "undefined",
+        "description": "A callback function that is called when the window's dimensions change. (optional)"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "SSR & Initial Values",
+      "bullets": [
+        "The hook detects if it is running in a browser. If not, it uses 0 for initial width/height unless initialWidth / initialHeight are provided.",
+        "On the client, the initial values default to the current window size unless overridden by props."
+      ]
+    },
+    {
+      "title": "onChange Callback",
+      "bullets": [
+        "The onChange callback is called every time the window is resized, after the state is updated.",
+        "The callback receives the new width and height as arguments."
+      ]
+    },
+    {
+      "title": "Immediate Update on Mount",
+      "bullets": [
+        "The hook immediately updates the state and calls onChange on mount to ensure the values are up-to-date with the actual window size."
+      ]
+    },
+    {
+      "title": "Cleanup",
+      "bullets": [
+        "The resize event listener is removed automatically when the component unmounts."
+      ]
+    },
+    {
+      "title": "Caveats & Best Practices",
+      "bullets": [
+        "The hook is intended for use in the browser; on the server, it will always return the initial values.",
+        "If you need to debounce or throttle resize events, wrap the hook or the callback accordingly.",
+        "The hook returns an object with width and height ."
+      ]
+    }
+  ]
 }

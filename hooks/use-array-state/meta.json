@@ -3,9 +3,70 @@
   "id": "use-array-state",
   "description": "Manages an array as a React state with built-in array manipulation methods.",
   "files": [
-    { "from": "files/use-array-state.ts", "to": "src/hooks/use-array-state.ts" }
+    {
+      "from": "files/use-array-state.ts",
+      "to": "src/hooks/use-array-state.ts"
+    }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "type": "UseArrayStateOptions",
+        "default": "{}",
+        "description": "Configuration options for the hook"
+      },
+      {
+        "name": "initialValue",
+        "type": "T[]",
+        "default": "[]",
+        "description": "The initial array value"
+      },
+      {
+        "name": "onChange",
+        "type": "(array: T[]) => void",
+        "default": "null",
+        "description": "Callback called whenever the array changes"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Type Safety",
+      "bullets": [
+        "The hook is fully type-safe with TypeScript generics.",
+        "All methods maintain type information throughout operations.",
+        "Prevents runtime errors with proper type checking."
+      ]
+    },
+    {
+      "title": "Performance Optimization",
+      "bullets": [
+        "Uses useCallback to memoize all methods for optimal performance.",
+        "Prevents unnecessary re-renders by checking for actual changes.",
+        "Efficiently handles large arrays with immutable updates."
+      ]
+    },
+    {
+      "title": "Change Detection",
+      "bullets": [
+        "The onChange callback is called whenever the array state changes.",
+        "Changes are detected at the reference level for performance.",
+        "Callbacks receive the new array as their argument."
+      ]
+    },
+    {
+      "title": "SSR Compatibility",
+      "bullets": [
+        "Fully compatible with Server-Side Rendering.",
+        "No browser-specific APIs used.",
+        "Safe for use in Next.js and other SSR frameworks."
+      ]
+    }
+  ]
 }

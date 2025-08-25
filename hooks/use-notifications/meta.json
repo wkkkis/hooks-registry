@@ -9,6 +9,196 @@
     }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "permission",
+        "type": "'default' | 'granted' | 'denied'",
+        "description": "Current notification permission status"
+      },
+      {
+        "name": "isSupported",
+        "type": "boolean",
+        "description": "Whether the browser supports the Notifications API"
+      },
+      {
+        "name": "isSecureContext",
+        "type": "boolean",
+        "description": "Whether the current context is secure (HTTPS)"
+      },
+      {
+        "name": "supportsActions",
+        "type": "boolean",
+        "description": "Whether the browser supports notification actions"
+      },
+      {
+        "name": "supportsBadge",
+        "type": "boolean",
+        "description": "Whether the browser supports notification badges"
+      },
+      {
+        "name": "supportsImage",
+        "type": "boolean",
+        "description": "Whether the browser supports notification images"
+      },
+      {
+        "name": "supportsVibrate",
+        "type": "boolean",
+        "description": "Whether the browser supports notification vibration"
+      },
+      {
+        "name": "supportsSound",
+        "type": "boolean",
+        "description": "Whether the browser supports notification sounds"
+      },
+      {
+        "name": "requestPermission",
+        "type": "() => Promise<NotificationPermission>",
+        "description": "Function to request notification permission"
+      },
+      {
+        "name": "showNotification",
+        "type": "(title: string, options?: NotificationOptions) => void",
+        "description": "Function to show a notification"
+      },
+      {
+        "name": "body",
+        "type": "string",
+        "description": "The body text of the notification"
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "description": "The URL of an icon to display in the notification"
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "description": "The URL of an image to display in the notification"
+      },
+      {
+        "name": "badge",
+        "type": "string",
+        "description": "The URL of an image used to represent the notification when there is not enough space"
+      },
+      {
+        "name": "tag",
+        "type": "string",
+        "description": "An ID for a given notification that allows you to find, replace, or remove the notification"
+      },
+      {
+        "name": "data",
+        "type": "void",
+        "description": "Arbitrary data that you want to associate with the notification"
+      },
+      {
+        "name": "requireInteraction",
+        "type": "boolean",
+        "description": "Whether the notification should remain active until the user clicks or dismisses it"
+      },
+      {
+        "name": "silent",
+        "type": "boolean",
+        "description": "Whether the notification should be silent"
+      },
+      {
+        "name": "sound",
+        "type": "string",
+        "description": "The URL of an audio file to play with the notification"
+      },
+      {
+        "name": "vibrate",
+        "type": "number | number[]",
+        "description": "A vibration pattern for devices with vibration hardware"
+      },
+      {
+        "name": "dir",
+        "type": "'auto' | 'ltr' | 'rtl'",
+        "description": "The direction of the notification's text"
+      },
+      {
+        "name": "lang",
+        "type": "string",
+        "description": "The notification's language"
+      },
+      {
+        "name": "renotify",
+        "type": "boolean",
+        "description": "Whether the user should be notified after a new notification replaces an old one"
+      },
+      {
+        "name": "sticky",
+        "type": "boolean",
+        "description": "Whether the notification should be sticky"
+      },
+      {
+        "name": "timestamp",
+        "type": "number",
+        "description": "The time at which the notification was created"
+      },
+      {
+        "name": "actions",
+        "type": "Array<{action: string, title: string, icon?: string}>",
+        "description": "Actions to display in the notification"
+      },
+      {
+        "name": "The",
+        "description": "hook returns an object with the following properties"
+      },
+      {
+        "name": "The",
+        "description": "showNotification function accepts an optional options parameter"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Browser Support",
+      "bullets": [
+        "The Notifications API is supported in most modern browsers with varying feature support:",
+        "Chrome: Full support",
+        "Firefox: Full support",
+        "Safari: Partial support (some features may not be available)",
+        "Edge: Full support",
+        "Opera: Full support",
+        "Note: The API requires a secure context (HTTPS) to work, except for localhost."
+      ]
+    },
+    {
+      "title": "Feature Detection",
+      "bullets": [
+        "The hook automatically detects browser support for various notification features",
+        "Provides boolean flags for each supported feature",
+        "Handles cases where certain features might not be available",
+        "Gracefully degrades functionality based on browser capabilities"
+      ]
+    },
+    {
+      "title": "Permission Management",
+      "bullets": [
+        "Tracks the current permission status",
+        "Provides a function to request permission",
+        "Handles permission changes across browser tabs",
+        "Manages permission state persistence"
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "Always check for browser support before using the hook",
+        "Request permission only after a user interaction",
+        "Provide clear feedback about the notification permission status",
+        "Implement fallback UI notifications for unsupported browsers",
+        "Use appropriate icons and badges to improve notification visibility",
+        "Consider the user's context when showing notifications",
+        "Handle notification errors gracefully",
+        "Clean up notifications when they're no longer needed"
+      ]
+    }
+  ]
 }

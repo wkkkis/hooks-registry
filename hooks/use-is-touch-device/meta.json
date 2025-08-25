@@ -9,6 +9,38 @@
       "to": "src/hooks/use-is-touch-device.ts"
     }
   ],
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "This",
+        "description": "hook takes no parameters."
+      }
+    ]
+  },
+  "returns": {
+    "properties": [
+      {
+        "name": "isTouchable",
+        "type": "boolean",
+        "description": "Whether the device supports touch input"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": null,
+      "bullets": [
+        "✅ SSR Support",
+        "✅ TypeScript",
+        "✅ Performance optimized",
+        "✅ React 18+ compatible",
+        "✅ Cross-browser compatibility"
+      ]
+    }
+  ]
 }

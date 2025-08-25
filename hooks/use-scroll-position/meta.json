@@ -9,6 +9,35 @@
     }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "onChange?",
+        "type": "(x: number, y: number) => void",
+        "default": "undefined",
+        "description": "A callback function called when the scroll position changes."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "SSR & Initial Values",
+      "bullets": [
+        "The hook checks if it's running in a browser. On the server, it returns 0 for both x and y .",
+        "On mount, the hook initializes the scroll position based on the current window.scrollX and window.scrollY ."
+      ]
+    },
+    {
+      "title": "Passive Scroll Listener",
+      "bullets": [
+        "The scroll listener is registered with { passive: true } for better performance.",
+        "The listener is cleaned up on unmount to prevent memory leaks."
+      ]
+    }
+  ]
 }

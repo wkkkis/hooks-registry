@@ -4,8 +4,53 @@
   "description": "Execute a function only once when the component is unmounted.",
   "version": "0.1.0",
   "files": [
-    { "from": "files/use-on-unmount.ts", "to": "src/hooks/use-on-unmount.ts" }
+    {
+      "from": "files/use-on-unmount.ts",
+      "to": "src/hooks/use-on-unmount.ts"
+    }
   ],
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "callback",
+        "type": "void function",
+        "default": "() => {}",
+        "description": "The function to execute when the component is unmounted."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Execution Timing",
+      "bullets": [
+        "The callback is executed only once, immediately before the component is unmounted (on the client).",
+        "The callback will not run on re-renders or updates, only on unmount."
+      ]
+    },
+    {
+      "title": "Callback Stability",
+      "bullets": [
+        "The callback is not re-invoked if it changes between renders; only the initial callback is used.",
+        "For best results, use a stable callback (e.g., from useCallback ) if it depends on props or state."
+      ]
+    },
+    {
+      "title": "SSR & Client-Only",
+      "bullets": [
+        "The hook is client-side only; on the server, the callback is never called."
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "Use for cleanup logic, analytics, or side effects that should only run once on unmount.",
+        "Avoid side effects that depend on up-to-date props or state unless the callback is stable."
+      ]
+    }
+  ]
 }

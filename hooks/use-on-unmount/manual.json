@@ -1,0 +1,8 @@
+{
+  "id": "use-on-unmount",
+  "manual": true,
+  "language": "tsx",
+  "encoding": "utf8",
+  "file": "use-on-unmount.tsx",
+  "code": "\"use client\";\n\nimport { useEffect, useRef } from \"react\";\n\nexport function useOnUnmount(callback: () => void): void {\n  const fnRef = useRef(callback);\n\n  fnRef.current = callback;\n\n  useEffect(() => {\n    return () => {\n      fnRef.current();\n    };\n  }, []);\n}\n"
+}

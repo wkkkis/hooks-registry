@@ -3,9 +3,91 @@
   "id": "use-keypress",
   "description": "Tracks the user's keyboard combinations and key presses.",
   "files": [
-    { "from": "files/use-keypress.ts", "to": "src/hooks/use-keypress.ts" }
+    {
+      "from": "files/use-keypress.ts",
+      "to": "src/hooks/use-keypress.ts"
+    }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "combo",
+        "type": "string",
+        "default": "null",
+        "description": "The combination of keys to listen for"
+      },
+      {
+        "name": "callback",
+        "type": "function",
+        "default": "null",
+        "description": "The callback to be called when the key or combination is pressed"
+      },
+      {
+        "name": "preventDefault",
+        "type": "boolean",
+        "default": "false",
+        "description": "If true, the event will be prevented from propagating"
+      },
+      {
+        "name": "target",
+        "type": "HTMLElement",
+        "default": "null",
+        "description": "The target element to listen for the key or combination"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Combo Normalization & Modifiers",
+      "bullets": [
+        "The combo string is case-insensitive and order-insensitive for modifiers.",
+        "Supported modifiers: ctrl , alt , shift , meta (for Command on Mac, Windows key on Windows).",
+        "Example: \"Ctrl+Shift+S\" , \"shift+ctrl+s\" , and \"CTRL+s+SHIFT\" are all equivalent.",
+        "Only one non-modifier key is supported per combo (e.g., \"ctrl+s\" is valid, \"ctrl+s+d\" is not)."
+      ]
+    },
+    {
+      "title": "Multiple Combos",
+      "bullets": [
+        "The combo prop can be a string or an array of strings. If an array, the callback fires for any matching combo.",
+        "Example: combo: ['ctrl+s', 'meta+s'] will trigger for either combination."
+      ]
+    },
+    {
+      "title": "Target Element",
+      "bullets": [
+        "By default, the hook listens on window , but you can specify a target HTMLElement (e.g., an input or div).",
+        "For best performance, use a stable reference (e.g., from useRef ) for the target. Changing the target frequently will cause listeners to be re-attached."
+      ]
+    },
+    {
+      "title": "Performance Notes",
+      "bullets": [
+        "The hook memoizes normalized combos and the event handler for efficiency.",
+        "Listeners are automatically cleaned up when the component unmounts or the target changes."
+      ]
+    },
+    {
+      "title": "Event Handling",
+      "bullets": [
+        "The hook listens for the keydown event.",
+        "If preventDefault is true, the default browser action is prevented for the matching combo.",
+        "The callback receives the original KeyboardEvent ."
+      ]
+    },
+    {
+      "title": "Caveats & Best Practices",
+      "bullets": [
+        "Only one non-modifier key is supported per combo.",
+        "Modifier order does not matter, but all specified modifiers must be pressed.",
+        "The hook is designed for keyboard shortcuts, not for general key tracking (e.g., holding multiple non-modifier keys)."
+      ]
+    }
+  ]
 }

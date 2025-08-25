@@ -1,0 +1,8 @@
+{
+  "id": "use-media",
+  "manual": true,
+  "language": "tsx",
+  "encoding": "utf8",
+  "file": "usage.tsx",
+  "code": "\"use client\";\n\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\n\nimport { useMedia } from \"@/components/hooks/use-media\";\n\nexport function UseMediaDemo() {\n  const isMobile = useMedia(\"(max-width: 768px)\");\n  const isDesktop = useMedia(\"(min-width: 768px)\");\n\n  return (\n    <Card className=\"relative max-w-sm w-full\">\n      <CardHeader>\n        <CardTitle>useMedia</CardTitle>\n        <CardDescription>\n          This component uses the <code>useMedia</code> hook to check if the\n          current window matches a media query.\n        </CardDescription>\n      </CardHeader>\n      <CardContent>\n        <p>Is mobile: {isMobile ? \"Yes\" : \"No\"}</p>\n        <p>Is desktop: {isDesktop ? \"Yes\" : \"No\"}</p>\n      </CardContent>\n      <CardFooter>\n        <p className=\"text-sm text-muted-foreground\">\n          Change the window size to see the values changing.\n        </p>\n      </CardFooter>\n    </Card>\n  );\n}\n"
+}

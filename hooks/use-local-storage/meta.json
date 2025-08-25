@@ -9,6 +9,68 @@
     }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "key",
+        "type": "string",
+        "default": "-",
+        "description": "The key to store the value in local storage"
+      },
+      {
+        "name": "initialValue",
+        "type": "string",
+        "default": "-",
+        "description": "The initial value to store in local storage"
+      },
+      {
+        "name": "options?",
+        "type": "UseLocalStorageOptions",
+        "default": "-",
+        "description": "The options for the hook"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Cross-Tab Synchronization",
+      "bullets": [
+        "The hook listens for storage events and updates the state if the value changes in another tab or window."
+      ]
+    },
+    {
+      "title": "Serialization & Deserialization",
+      "bullets": [
+        "By default, values are serialized with JSON.stringify and deserialized with JSON.parse .",
+        "You can provide custom serialize and deserialize functions for non-JSON data or advanced use cases."
+      ]
+    },
+    {
+      "title": "Error Handling",
+      "bullets": [
+        "If reading or writing to localStorage fails (e.g., quota exceeded, invalid JSON), the hook logs a warning and falls back to the initial value."
+      ]
+    },
+    {
+      "title": "SSR & Initial Value",
+      "bullets": [
+        "On the server, the hook always returns the initial value.",
+        "The initial value is only used if there is no value in localStorage for the given key."
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "The hook is client-side only; on the server, it does not interact with localStorage.",
+        "Avoid storing sensitive data in localStorage.",
+        "Changing the key will re-read and update the value from localStorage.",
+        "For best performance, avoid creating new serialize / deserialize functions on every render (use useCallback or useMemo if needed)."
+      ]
+    }
+  ]
 }

@@ -9,6 +9,62 @@
       "to": "src/hooks/use-click-outside.ts"
     }
   ],
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "ref",
+        "type": "RefObject",
+        "default": "null",
+        "description": "The reference to the element to detect clicks outside of"
+      },
+      {
+        "name": "onClickOutside",
+        "type": "function",
+        "default": "null",
+        "description": "The function to call when a click outside the element occurs"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Event Types & Capturing",
+      "bullets": [
+        "Listens for both mousedown and touchstart events to detect clicks and touches outside the referenced element.",
+        "Listeners are attached in the capturing phase (ensuring early detection before event bubbling)."
+      ]
+    },
+    {
+      "title": "Callback Reference",
+      "bullets": [
+        "The callback is always up-to-date using a ref, so you can safely use inline or dynamic functions without worrying about stale closures or unnecessary re-attachments."
+      ]
+    },
+    {
+      "title": "Behavior",
+      "bullets": [
+        "The callback is only called if the event target is outside the referenced element.",
+        "If the ref is null or the event target is not a DOM node, the callback is not called."
+      ]
+    },
+    {
+      "title": "Cleanup",
+      "bullets": [
+        "Event listeners are automatically removed when the component unmounts."
+      ]
+    },
+    {
+      "title": "Caveats & Best Practices",
+      "bullets": [
+        "Works for clicks/touches outside the referenced element, including those in React portals.",
+        "Not suitable for server-side rendering (SSR) directly, as it uses document .",
+        "If you use multiple refs or dynamic elements, ensure the ref is stable and points to the correct element.",
+        "The hook does not distinguish between left, right, or middle mouse buttons."
+      ]
+    }
+  ]
 }

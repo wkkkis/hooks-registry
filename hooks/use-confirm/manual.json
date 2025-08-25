@@ -1,0 +1,8 @@
+{
+  "id": "use-confirm",
+  "manual": true,
+  "language": "tsx",
+  "encoding": "utf8",
+  "file": "use-confirm.tsx",
+  "code": "\"use client\";\n\nimport { useCallback, useState } from \"react\";\n\nexport type ConfirmationStatus =\n  | \"idle\"\n  | \"confirming\"\n  | \"confirmed\"\n  | \"cancelled\";\n\ninterface UseConfirmReturn {\n  status: ConfirmationStatus;\n  confirm: () => void;\n  cancel: () => void;\n  reset: () => void;\n}\n\nexport function useConfirm(): UseConfirmReturn {\n  const [status, setStatus] = useState<ConfirmationStatus>(\"idle\");\n\n  const confirm = useCallback(() => {\n    setStatus(\"confirmed\");\n  }, []);\n\n  const cancel = useCallback(() => {\n    setStatus(\"cancelled\");\n  }, []);\n\n  const reset = useCallback(() => {\n    setStatus(\"idle\");\n  }, []);\n\n  return {\n    status,\n    confirm,\n    cancel,\n    reset,\n  };\n}\n"
+}

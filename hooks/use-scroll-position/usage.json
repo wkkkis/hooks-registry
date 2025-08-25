@@ -1,0 +1,8 @@
+{
+  "id": "use-scroll-position",
+  "manual": true,
+  "language": "tsx",
+  "encoding": "utf8",
+  "file": "usage.tsx",
+  "code": "\"use client\";\n\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\n\nimport { useScrollPosition } from \"@/components/hooks/use-scroll-position\";\n\nexport function UseScrollPositionDemo() {\n  const { x, y } = useScrollPosition();\n\n  return (\n    <Card className=\"relative max-w-md w-full\">\n      <CardHeader>\n        <CardTitle>useScrollPosition</CardTitle>\n        <CardDescription>\n          This component uses the <code>useScrollPosition</code> hook to track\n          the page scroll position.\n        </CardDescription>\n      </CardHeader>\n      <CardContent className=\"space-y-2\">\n        <p>Scroll X: {x}px</p>\n        <p>Scroll Y: {y}px</p>\n      </CardContent>\n      <CardFooter>\n        <p className=\"text-sm text-muted-foreground\">\n          Scroll the page to see the values change.\n        </p>\n      </CardFooter>\n    </Card>\n  );\n}\n"
+}

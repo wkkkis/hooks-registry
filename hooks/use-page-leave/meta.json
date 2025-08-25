@@ -9,6 +9,37 @@
       "to": "src/hooks/use-page-leave.ts"
     }
   ],
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "confirmationMessage",
+        "type": "string",
+        "default": "-",
+        "description": "Custom message to show in the browser's confirmation dialog. Note: Most modern browsers ignore custom messages for security reasons."
+      },
+      {
+        "name": "showConfirmation",
+        "type": "boolean",
+        "default": "false",
+        "description": "Whether to show the browser's confirmation dialog when the user tries to leave the page."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": null,
+      "bullets": [
+        "Tab Switch Detection : Uses the visibilitychange event to detect when the user switches tabs or minimizes the browser.",
+        "Page Close/Reload Detection : Uses the beforeunload event to detect when the user tries to close or reload the page.",
+        "Confirmation Dialog : Optionally shows a confirmation dialog when the user tries to leave the page.",
+        "Custom Callback : Allows you to execute custom logic when the user leaves the page.",
+        "SSR Safe : Checks for the window object before adding event listeners, making it safe to use in SSR/Next.js environments."
+      ]
+    }
+  ]
 }

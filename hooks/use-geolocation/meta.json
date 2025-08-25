@@ -4,8 +4,62 @@
   "description": "Enter and exit fullscreen mode for a given element or the entire page.",
   "version": "0.1.0",
   "files": [
-    { "from": "files/use-geolocation.ts", "to": "src/hooks/use-geolocation.ts" }
+    {
+      "from": "files/use-geolocation.ts",
+      "to": "src/hooks/use-geolocation.ts"
+    }
   ],
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "options",
+        "type": "PositionOptions",
+        "default": "{}",
+        "description": "Options for getCurrentPosition and watchPosition"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": null,
+      "bullets": [
+        "Declarative interface for both getCurrentPosition and continuous watchPosition .",
+        "Automatic cleanup on component unmount.",
+        "Graceful fallback if Geolocation API is not supported.",
+        "Fully typed with TypeScript."
+      ]
+    },
+    {
+      "title": "Browser Support",
+      "bullets": [
+        "Chrome: Supported (since v5)",
+        "Firefox: Supported (since v3.5)",
+        "Safari: Supported (since 5)",
+        "Edge: Supported",
+        "Opera: Supported"
+      ]
+    },
+    {
+      "title": "Security Considerations",
+      "bullets": [
+        "Requires secure context (HTTPS).",
+        "User permission prompt is shown on first request."
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "Always handle the error case to inform the user.",
+        "Clear the watch when no longer needed to save battery.",
+        "Consider asking permission only when necessary.",
+        "For frequent updates, throttle or debounce updates to avoid performance issues.",
+        "Use maximumAge and timeout options wisely."
+      ]
+    }
+  ]
 }

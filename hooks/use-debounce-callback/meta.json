@@ -9,6 +9,73 @@
     }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "delay",
+        "type": "number",
+        "default": "500",
+        "description": "The delay in milliseconds before the function is executed."
+      },
+      {
+        "name": "callback",
+        "type": "generic T",
+        "default": "undefined",
+        "description": "The function to be executed after the delay."
+      }
+    ]
+  },
+  "returns": {
+    "properties": [
+      {
+        "name": "The",
+        "description": "returned function accepts the same arguments as the original callback."
+      },
+      {
+        "name": "If",
+        "description": "called repeatedly, only the last call within the delay period will trigger the callback."
+      },
+      {
+        "name": "The",
+        "description": "debounced function is stable (does not change identity unless delay changes)."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Callback & Delay Handling",
+      "bullets": [
+        "The hook always uses the latest version of the callback, even if it changes between renders.",
+        "The delay can be changed dynamically; the new delay will be used for subsequent calls."
+      ]
+    },
+    {
+      "title": "Returned Debounced Function",
+      "bullets": [
+        "The returned function accepts the same arguments as the original callback.",
+        "If called repeatedly, only the last call within the delay period will trigger the callback.",
+        "The debounced function is stable (does not change identity unless delay changes)."
+      ]
+    },
+    {
+      "title": "Cleanup",
+      "bullets": [
+        "Any pending timeout is cleared when the component unmounts, preventing memory leaks or unexpected calls."
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "The hook is client-side only.",
+        "For best performance, memoize the callback if it depends on other values.",
+        "If you need to cancel a pending debounce manually, you must manage that outside the hook.",
+        "The hook does not guarantee the callback will run if the component unmounts before the delay."
+      ]
+    }
+  ]
 }

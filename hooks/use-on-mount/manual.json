@@ -1,0 +1,8 @@
+{
+  "id": "use-on-mount",
+  "manual": true,
+  "language": "tsx",
+  "encoding": "utf8",
+  "file": "use-on-mount.tsx",
+  "code": "\"use client\";\n\nimport { useEffect, useRef } from \"react\";\n\nexport function useOnMount(callback: () => void): void {\n  const calledRef = useRef(false);\n\n  useEffect(() => {\n    if (!calledRef.current) {\n      callback();\n      calledRef.current = true;\n    }\n  }, []);\n}\n"
+}

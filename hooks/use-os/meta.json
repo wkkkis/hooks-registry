@@ -3,7 +3,61 @@
   "id": "use-os",
   "description": "Detects the user's operating system.",
   "version": "0.1.0",
-  "files": [{ "from": "files/use-os.ts", "to": "src/hooks/use-os.ts" }],
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "files": [
+    {
+      "from": "files/use-os.ts",
+      "to": "src/hooks/use-os.ts"
+    }
+  ],
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "This",
+        "description": "hook does not accept any props."
+      }
+    ]
+  },
+  "returns": {
+    "properties": [
+      {
+        "name": "The",
+        "description": "hook returns a value from the OS enum, not just a string. You can import and use the OS enum for type safety."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Detection Logic",
+      "bullets": [
+        "The hook uses the browser's navigator.userAgent to detect the operating system.",
+        "It distinguishes between macOS and iOS by checking for touch support on Mac devices.",
+        "Returns one of: macos , ios , windows , android , linux , or undetermined ."
+      ]
+    },
+    {
+      "title": "SSR & Initial Value",
+      "bullets": [
+        "On the server, or if window / navigator is not available, the hook returns undetermined ."
+      ]
+    },
+    {
+      "title": "Enum Return Type",
+      "bullets": [
+        "The hook returns a value from the OS enum, not just a string. You can import and use the OS enum for type safety."
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "The hook is client-side only; on the server, it cannot detect the OS.",
+        "User agent sniffing is not 100% reliable and may not detect all edge cases or future OSes.",
+        "For best performance, use the hook at the top level of your component and avoid unnecessary re-renders."
+      ]
+    }
+  ]
 }

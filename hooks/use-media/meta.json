@@ -2,8 +2,70 @@
   "name": "use-media",
   "id": "use-media",
   "description": "Tracks the window's current media query.",
-  "files": [{ "from": "files/use-media.ts", "to": "src/hooks/use-media.ts" }],
+  "files": [
+    {
+      "from": "files/use-media.ts",
+      "to": "src/hooks/use-media.ts"
+    }
+  ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "query",
+        "type": "string",
+        "default": "undefined",
+        "description": "The media query to track. (required)"
+      },
+      {
+        "name": "defaultState?",
+        "type": "boolean",
+        "default": "undefined",
+        "description": "The default state of the media query. (optional)"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "SSR & Initial Values",
+      "bullets": [
+        "The hook uses defaultState as the initial value during SSR or if the browser is not available.",
+        "If defaultState is not provided, the initial value is false on the server and the actual match on the client.",
+        "A warning is logged in development if defaultState is not provided during SSR, to help prevent hydration mismatches."
+      ]
+    },
+    {
+      "title": "Required Query",
+      "bullets": [
+        "The query prop is required and must be a non-empty string.",
+        "The hook throws an error if query is missing or invalid."
+      ]
+    },
+    {
+      "title": "State Updates",
+      "bullets": [
+        "The hook updates its state immediately on mount and whenever the media query changes.",
+        "Uses the change event on window.matchMedia for real-time updates."
+      ]
+    },
+    {
+      "title": "Cleanup",
+      "bullets": [
+        "The event listener is removed automatically when the component unmounts or the query changes."
+      ]
+    },
+    {
+      "title": "Caveats & Best Practices",
+      "bullets": [
+        "Always provide a defaultState for SSR to avoid hydration mismatches.",
+        "The hook returns a boolean indicating whether the media query currently matches.",
+        "The hook is intended for use in the browser; on the server, it will always return the defaultState or false ."
+      ]
+    }
+  ]
 }

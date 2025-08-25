@@ -3,9 +3,73 @@
   "id": "use-orientation",
   "description": "Tracks the window's current media query.",
   "files": [
-    { "from": "files/use-orientation.ts", "to": "src/hooks/use-orientation.ts" }
+    {
+      "from": "files/use-orientation.ts",
+      "to": "src/hooks/use-orientation.ts"
+    }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "There",
+        "description": "is no props for this hook."
+      }
+    ]
+  },
+  "returns": {
+    "properties": [
+      {
+        "name": "The hook returns a string",
+        "description": "either 'portrait' or 'landscape' ."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "SSR & Initial Value",
+      "bullets": [
+        "The hook defaults to 'portrait' if window is not available (e.g., during SSR).",
+        "On the client, the initial value reflects the current orientation."
+      ]
+    },
+    {
+      "title": "State Updates",
+      "bullets": [
+        "The hook updates its state immediately on mount and whenever the device orientation changes.",
+        "Uses the change event on window.matchMedia('(orientation: portrait)') for real-time updates."
+      ]
+    },
+    {
+      "title": "Browser Compatibility",
+      "bullets": [
+        "Uses addEventListener / removeEventListener if available, otherwise falls back to addListener / removeListener for older browsers."
+      ]
+    },
+    {
+      "title": "Cleanup",
+      "bullets": [
+        "The event listener is removed automatically when the component unmounts."
+      ]
+    },
+    {
+      "title": "Return Value",
+      "bullets": [
+        "The hook returns a string: either 'portrait' or 'landscape' ."
+      ]
+    },
+    {
+      "title": "Caveats & Best Practices",
+      "bullets": [
+        "The hook is intended for use in the browser; on the server, it will always return 'portrait' .",
+        "Works for both mobile and desktop browsers that support the orientation media query.",
+        "If you need to support environments without window.matchMedia , consider a fallback."
+      ]
+    }
+  ]
 }

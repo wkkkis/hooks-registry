@@ -2,8 +2,63 @@
   "name": "use-toggle",
   "id": "use-toggle",
   "description": "Controls a boolean state with a toggle function.",
-  "files": [{ "from": "files/use-toggle.ts", "to": "src/hooks/use-toggle.ts" }],
+  "files": [
+    {
+      "from": "files/use-toggle.ts",
+      "to": "src/hooks/use-toggle.ts"
+    }
+  ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "returns": {
+    "properties": [
+      {
+        "name": "The hook returns a tuple",
+        "description": "[value, toggle] ."
+      },
+      {
+        "name": "value",
+        "description": "is the current boolean state."
+      },
+      {
+        "name": "toggle",
+        "description": "is a function that toggles the state between true and false ."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "onToggle Callback",
+      "bullets": [
+        "The onToggle callback is called every time the state changes, with the new value as its argument.",
+        "The callback is called after the state is updated."
+      ]
+    },
+    {
+      "title": "Returned Values",
+      "bullets": [
+        "The hook returns a tuple: [value, toggle] .",
+        "value is the current boolean state.",
+        "toggle is a function that toggles the state between true and false ."
+      ]
+    },
+    {
+      "title": "Initial Value",
+      "bullets": [
+        "The initialValue prop sets the initial state (defaults to false )."
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "The hook is designed for toggling boolean state in React components.",
+        "For best performance, memoize the onToggle callback if it depends on other values.",
+        "The hook is client-side only."
+      ]
+    }
+  ]
 }

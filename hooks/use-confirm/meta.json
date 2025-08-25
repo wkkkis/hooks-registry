@@ -3,9 +3,69 @@
   "id": "use-confirm",
   "description": "Manages user confirmation states for actions.",
   "files": [
-    { "from": "files/use-confirm.ts", "to": "src/hooks/use-confirm.ts" }
+    {
+      "from": "files/use-confirm.ts",
+      "to": "src/hooks/use-confirm.ts"
+    }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "returns": {
+    "properties": [
+      {
+        "name": "The",
+        "description": "hook returns an object with the current status and control functions"
+      },
+      {
+        "name": "status",
+        "description": "Current confirmation state"
+      },
+      {
+        "name": "confirm",
+        "description": "Sets status to 'confirmed'"
+      },
+      {
+        "name": "cancel",
+        "description": "Sets status to 'cancelled'"
+      },
+      {
+        "name": "reset",
+        "description": "Resets status to 'idle'"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Status Management",
+      "bullets": [
+        "idle : Initial state, waiting for user action",
+        "confirming : User is being asked to confirm the action",
+        "confirmed : User has confirmed the action",
+        "cancelled : User has cancelled the action"
+      ]
+    },
+    {
+      "title": "Returned Values",
+      "bullets": [
+        "The hook returns an object with the current status and control functions",
+        "status : Current confirmation state",
+        "confirm : Sets status to 'confirmed'",
+        "cancel : Sets status to 'cancelled'",
+        "reset : Resets status to 'idle'"
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "Use this hook for actions that require user confirmation",
+        "Always provide clear UI feedback for each state",
+        "Consider using this with modal dialogs or confirmation prompts",
+        "The hook is client-side only"
+      ]
+    }
+  ]
 }

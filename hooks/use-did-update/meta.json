@@ -4,8 +4,60 @@
   "description": "Execute a function when the component is updated, but not when it is mounted.",
   "version": "0.1.0",
   "files": [
-    { "from": "files/use-did-update.ts", "to": "src/hooks/use-did-update.ts" }
+    {
+      "from": "files/use-did-update.ts",
+      "to": "src/hooks/use-did-update.ts"
+    }
   ],
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "callback",
+        "type": "void function",
+        "default": "() => {}",
+        "description": "The function to execute when the component is unmounted."
+      },
+      {
+        "name": "deps",
+        "type": "DependencyList",
+        "default": "[]",
+        "description": "The dependencies to watch for changes."
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": "Update-Only Execution",
+      "bullets": [
+        "The callback is executed only when the dependencies change after the initial mount.",
+        "The callback is not called on the initial mount."
+      ]
+    },
+    {
+      "title": "Dependency Handling",
+      "bullets": [
+        "The deps array works like in useEffect : the callback runs when any dependency changes.",
+        "If deps is omitted, the effect will run after every update (except the first mount)."
+      ]
+    },
+    {
+      "title": "Cleanup",
+      "bullets": [
+        "The hook does not provide a built-in cleanup for the callback itself, but you can return a cleanup function from your callback just like in useEffect ."
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "The hook is client-side only; on the server, it does not run.",
+        "Use for side effects that should only run on updates, not on mount (e.g., reacting to prop or state changes).",
+        "If you need to run logic both on mount and update, use useEffect instead."
+      ]
+    }
+  ]
 }

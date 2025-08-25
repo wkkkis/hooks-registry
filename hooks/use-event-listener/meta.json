@@ -9,6 +9,80 @@
     }
   ],
   "version": "0.1.0",
-  "peerDependencies": { "react": ">=17.0.0" },
-  "since": "0.1.0"
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "since": "0.1.0",
+  "title": "guara hooks",
+  "options": {
+    "properties": [
+      {
+        "name": "eventName",
+        "type": "keyof WindowEventMap",
+        "default": "Required",
+        "description": "The DOM event name to listen for"
+      },
+      {
+        "name": "handler",
+        "type": "(event: Event) => void",
+        "default": "Required",
+        "description": "The callback function for the event"
+      },
+      {
+        "name": "element",
+        "type": "RefObject<HTMLElement> | EventTarget",
+        "default": "window",
+        "description": "The element to attach the listener to"
+      },
+      {
+        "name": "options",
+        "type": "boolean | AddEventListenerOptions",
+        "default": "undefined",
+        "description": "Options for addEventListener"
+      }
+    ]
+  },
+  "features": [
+    {
+      "title": null,
+      "bullets": [
+        "useEventListener provides a clean, type-safe way to manage DOM event listeners in React components with these benefits:",
+        "Automatically handles cleanup on unmount to prevent memory leaks",
+        "Preserves handler reference between renders with a ref",
+        "Type-safe event names and handler parameters",
+        "Works with window, document, or specific DOM elements",
+        "Supports all AddEventListener options"
+      ]
+    },
+    {
+      "title": "Browser Support",
+      "bullets": [
+        "This hook relies on the standard DOM addEventListener API, which is supported in all modern browsers:",
+        "Chrome: Full support",
+        "Firefox: Full support",
+        "Safari: Full support",
+        "Edge: Full support",
+        "Opera: Full support"
+      ]
+    },
+    {
+      "title": "Performance Considerations",
+      "bullets": [
+        "Uses useRef to avoid recreating event listeners on each render",
+        "Minimizes re-renders by not returning state",
+        "Automatic cleanup prevents memory leaks",
+        "Minimal overhead compared to direct event listeners"
+      ]
+    },
+    {
+      "title": "Best Practices & Caveats",
+      "bullets": [
+        "Always provide a stable handler or use useCallback for the event handler",
+        "For element refs, ensure the element is mounted before the hook runs",
+        "For high-frequency events like mousemove or scroll, consider debouncing or throttling",
+        "TypeScript users benefit from complete type safety for events",
+        "Be cautious with passive events on touch devices for performance"
+      ]
+    }
+  ]
 }
